@@ -1,0 +1,31 @@
+﻿@model Entrev1sta.Models.OrderViewModel
+
+@{
+    ViewData["Title"] = "Buscar Orden";
+}
+
+<h1>Orden</h1>
+
+@if (Model == null)
+{
+    <p>No se encontró ninguna orden con el numero especificado.</p>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>Número de orden</th>
+            <td>@Model.OrderId</td>
+        </tr>
+        <tr>
+            <th>Nombre de la compañía</th>
+            <td>@Model.CustomerName</td>
+        </tr>
+        <tr>
+            <th>Dirección</th>
+            <td>@Model.CustomerAddress</td>
+        </tr>
+    </table>
+}
+
+<a asp-action="Index" asp-controller="Home">Volver al inicio</a>

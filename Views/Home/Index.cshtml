@@ -1,0 +1,33 @@
+﻿@model Entrev1sta.Models.Order
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h1>Buscador de ordenes</h1>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-4">
+                <form asp-action="BuscarOrden" asp-controller="Home" method="post">
+                    <div class="col-sm-6">
+                        <label class="form-label" asp-for="OrderId">Ingrese el numero de orden: </label>
+                        <input class="form-control form-control-sm" asp-for="OrderId" name="idOrden" />
+                        <span asp-validation-for="OrderId" class="text-danger"></span>
+                    </div>
+                    <div class="text-right mt-2">
+                        <button type="submit" value="Buscar" class="btn btn-primary">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
